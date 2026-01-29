@@ -1,0 +1,58 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <style type="text/tailwindcss">
+      .dots{
+        top: calc(var(--v)*12px);
+        left: calc(var(--r)*2.15px);
+      }
+     .swiper-wrapper .swiper-slide{
+        @apply  h-52 w-72 rounded-xl overflow-hidden;
+      }
+    </style>
+</head>
+<body>
+    <div
+        class="bg-slate-800 min-h-screen w-full absolute top-0 left-0 before:absolute before:top-0 before:left-0 before:w-full before:h-full -z-1 before:z-1 before:bg-white/10 before:backdrop-blur-lg">
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 10; --r: 34"></span>
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 44; --r: 67"></span>
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 14; --r: 424"></span>
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 5; --r: 442"></span>
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 38; --r: 587"></span>
+        <span class="dots absolute size-5 animate-pulse duration-500 rounded-full bg-red-600"
+            style="--v: 10; --r: 34"></span>
+    </div>
+    <div class="z-2 w-full min-h-screen flex items-center justify-center">
+        <div class="swiper w-[60vw] slider relative z-10">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-52 w-72 rounded-xl">
+                    <img src="https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?_gl=1*1a8y5vy*_ga*MTc1MDE0MDcxOC4xNzY2MjkzNDA4*_ga_8JE65Q40S6*czE3NjYyOTM0MDgkbzEkZzEkdDE3NjYyOTM0NDAkajI4JGwwJGgw"
+     class="h-full w-full object-cover" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?_gl=1*yr3nis*_ga*MTc1MDE0MDcxOC4xNzY2MjkzNDA4*_ga_8JE65Q40S6*czE3NjYyOTM0MDgkbzEkZzEkdDE3NjYyOTQ3NDIkajE5JGwwJGgw" class="h-full w-full object-cover" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.pexels.com/photos/4141954/pexels-photo-4141954.jpeg" class="h-full w-full object-cover" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.pexels.com/photos/2127020/pexels-photo-2127020.jpeg" class="h-full w-full object-cover" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg" class="h-full w-full object-cover" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
