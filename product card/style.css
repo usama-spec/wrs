@@ -1,0 +1,22 @@
+ .tilt {
+     transform-style: preserve-3d;
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+ }
+
+ .tilt img {
+     transform: translateZ(40px);
+ }
+
+ .badge-glow {
+     animation: glow 1.4s infinite alternate;
+ }
+
+ @keyframes glow {
+     from {
+         box-shadow: 0 0 6px rgba(255, 200, 0, .4);
+     }
+
+     to {
+         box-shadow: 0 0 16px rgba(255, 200, 0, .9);
+     }
+ }
