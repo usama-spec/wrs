@@ -1,0 +1,76 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+section{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #042104;
+	animation: animationBg 10s linear infinite;
+}
+@keyframes animationBg{
+   from{
+	filter: hue-rotate(0deg);
+   }
+   to{
+	filter: hue-rotate(360deg);
+   }
+}
+section .loader{
+	position: relative;
+	height: 120px;
+	width: 120px;
+}
+section .loader span{
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	transform: rotate(calc(18deg * var(--i)));
+}
+section .loader span::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 15px;
+	width: 15px;
+	background: #00ff0a;
+	border-radius: 50%;
+	box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a, 0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+	animation: animate 2s linear calc(00.1s * var(--i)) infinite;
+}
+@keyframes animate{
+	from{transform: scale(0);}
+	to{transform: scale(1);}
+}
+.button{
+	height: 44px;
+	width: 300px;
+	border-radius: 6px;
+	background-color: #00ff0a;
+	color: white;
+	font-family: sans-serif;
+	position: relative;
+	overflow: hidden;
+}
+.button::before{
+	content: '';
+	height: 100%;
+	width: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(38, 0, 255, 0.3);
+	transition: 0.5s ease-in-out;
+}
+.button:hover::before{
+    width: 100%;
+	transition: 0.5s ease-in-out;
+
+}
