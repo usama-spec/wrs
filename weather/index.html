@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .weather-icon img {
+            width: 90px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body
+    class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center px-4">
+    <div class="w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl p-8 text-white">
+        <h1 class="text-3xl font-semibold mb-8 text-center tracking-wide">
+            Weather Forecast
+        </h1>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div>
+                <label class="block mb-2 text-sm text-slate-300">
+                    Location
+                </label>
+                <div class="relative">
+                    <input id="address" type="text" placeholder="Search city or place"
+                        class="w-full p-4 rounded-xl bg-white/20 border border-white/10 outline-none focus:ring-2 focus:ring-red-500" />
+                    <input type="hidden" id="lat" />
+                    <input type="hidden" id="lon" />
+                    <div id="suggestions" class="absolute top-full left-0 w-full mt-2 hidden flex-col gap-2 bg-black/80 backdrop-blur-lg rounded-xl p-2 z-20">
+                    </div>
+                </div>
+                <button id="searchBtn"
+                    class="w-full mt-5 p-4 rounded-xl bg-red-600 hover:bg-red-700 transition font-semibold tracking-wide">
+                    Get Weather
+                </button>
+            </div>
+            <div class="flex items-center justify-center">
+                <div id="empty-data" class="text-center text-slate-400">
+                    <img src="assets/message/search-city.png" alt="" srcset="">
+                </div>
+                <div id="weatherInfo" class="hidden w-full text-center"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
