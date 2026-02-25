@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Popup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <button class="btn" onclick="openPopup()">
+        <i class="fa-solid fa-paper-plane"></i> Submit
+    </button>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+    <div class="icon">
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h2>Success!</h2>
+    <p>Your request has been submitted successfully. We’ll contact you shortly.</p>
+    <div class="popup-actions">
+        <button class="btn-outline" onclick="closePopup()">
+            <i class="fa-solid fa-xmark"></i> Close
+        </button>
+        <button class="btn-primary" onclick="closePopup()">
+            <i class="fa-solid fa-check"></i> OK
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+:root {
+    --primary: #6366f1;
+    --primary-glow: rgba(99, 102, 241, 0.4);
+    --secondary: #64748b;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --accent: #10b981;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.app-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+.transcription-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 2rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.transcription-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.visualizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 30px;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visualizer.active {
+    opacity: 1;
+}
+
+.bar {
+    width: 4px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.visualizer.active .bar {
+    animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.bar:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.text-container {
+    flex-grow: 1;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+.text-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-container::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 3px;
+}
+
+.interim {
+    color: var(--text-dim);
+    display: inline;
+}
+
+.final {
+    color: var(--text-main);
+    display: inline;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 20px var(--primary-glow);
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px var(--primary-glow);
+}
+
+.btn-primary.recording {
+    background: var(--danger);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+.btn-secondary {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-dim);
+}
+
+.btn-secondary:hover {
+    background: var(--card-border);
+    color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        height: 10px;
+    }
+
+    to {
+        height: 30px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .transcription-card {
+        padding: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 60px;
+        height: 60px;
+    }
+}

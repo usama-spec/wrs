@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors | Premium Edition</title>
+    <meta name="description"
+        content="A premium Rock Paper Scissors game with a modern Glassmorphism and Neon aesthetic.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+    <div class="background-glow-alt"></div>
+
+    <main class="game-container">
+        <header>
+            <h1>ROCK PAPER SCISSORS</h1>
+            <p class="status-msg" id="status-msg">Choose your weapon to start!</p>
+        </header>
+
+        <section class="score-board">
+            <div class="score-item">
+                <span class="score-label">Player</span>
+                <span class="score-value" id="player-score">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Computer</span>
+                <span class="score-value" id="computer-score">0</span>
+            </div>
+        </section>
+
+        <section class="battlefield">
+            <div class="choice-display">
+                <div class="choice-card" id="player-choice-card">?</div>
+                <span class="choice-name">YOU</span>
+            </div>
+
+            <div class="vs-badge">VS</div>
+
+            <div class="choice-display">
+                <div class="choice-card" id="computer-choice-card">?</div>
+                <span class="choice-name">AI</span>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button class="choice-btn" data-choice="rock" title="Rock">✊</button>
+            <button class="choice-btn" data-choice="paper" title="Paper">✋</button>
+            <button class="choice-btn" data-choice="scissors" title="Scissors">✌️</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary-neon: #00f2ff;
+    --secondary-neon: #7000ff;
+    --accent-neon: #ff007a;
+    --bg-dark: #0a0b10;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-muted: #a0a0c0;
+    --shadow-neon: 0 0 20px rgba(0, 242, 255, 0.3);
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top right, #1a1b26, #0a0b10);
+}
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    top: -200px;
+    right: -200px;
+    z-index: -1;
+}
+
+.background-glow-alt {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    bottom: -150px;
+    left: -150px;
+    z-index: -1;
+}
+
+.game-container {
+    width: 90%;
+    max-width: 800px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, var(--primary-neon), var(--secondary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.score-board {
+    display: flex;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.score-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-neon);
+}
+
+.battlefield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.choice-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.choice-card {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.choice-card.active {
+    border-color: var(--primary-neon);
+    box-shadow: var(--shadow-neon);
+    transform: scale(1.1);
+}
+
+.choice-name {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.vs-badge {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.choice-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--glass-border);
+    background: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.choice-btn:hover {
+    border-color: var(--primary-neon);
+    background: rgba(0, 242, 255, 0.05);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-neon);
+}
+
+.choice-btn:active {
+    transform: scale(0.95);
+}
+
+.status-msg {
+    min-height: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.winner {
+    color: var(--primary-neon) !important;
+}
+
+.loser {
+    color: var(--accent-neon) !important;
+}
+
+.draw {
+    color: var(--text-muted) !important;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .battlefield {
+        margin: 1rem 0;
+    }
+
+    .choice-card {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+
+    .choice-btn {
+        width: 65px;
+        height: 65px;
+        font-size: 1.5rem;
+    }
+}
