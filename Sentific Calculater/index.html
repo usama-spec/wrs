@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator | Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="calculator-container">
+        <div class="calculator-glass">
+            <div class="brand">
+                <span>SCIENTIFIC</span>
+                <div class="model-badge">PRO-X</div>
+            </div>
+            <div class="display-wrapper">
+                <div class="history-display" id="history"></div>
+                <div class="input-display" id="display">0</div>
+                <input type="hidden" id="display-input" value="0">
+            </div>
+            <div class="buttons-grid">
+                <button class="btn btn-sci" onclick="pushSymbol('(')">(</button>
+                <button class="btn btn-sci" onclick="pushSymbol(')')">)</button>
+                <button class="btn btn-sci" onclick="clearDisplay()">AC</button>
+                <button class="btn btn-sci" onclick="backspace()">DEL</button>
+                <button class="btn btn-sci" onclick="pushSymbol('%')">%</button>
+                <button class="btn btn-sci" onclick="pushFunction('sin(')">sin</button>
+                <button class="btn btn-sci" onclick="pushFunction('cos(')">cos</button>
+                <button class="btn btn-sci" onclick="pushFunction('tan(')">tan</button>
+                <button class="btn btn-sci" onclick="pushFunction('log(')">log</button>
+                <button class="btn btn-sci" onclick="pushFunction('ln(')">ln</button>
+                <button class="btn btn-sci" onclick="pushFunction('sqrt(')">√</button>
+                <button class="btn btn-sci" onclick="pushSymbol('^')">xʸ</button>
+                <button class="btn btn-sci" onclick="pushSymbol('π')">π</button>
+                <button class="btn btn-sci" onclick="pushSymbol('e')">e</button>
+                <button class="btn btn-op" onclick="pushSymbol('/')">÷</button>
+                <button class="btn btn-num" onclick="pushSymbol('7')">7</button>
+                <button class="btn btn-num" onclick="pushSymbol('8')">8</button>
+                <button class="btn btn-num" onclick="pushSymbol('9')">9</button>
+                <button class="btn btn-op" onclick="pushSymbol('*')">×</button>
+                <button class="btn btn-num" onclick="pushSymbol('4')">4</button>
+                <button class="btn btn-num" onclick="pushSymbol('5')">5</button>
+                <button class="btn btn-num" onclick="pushSymbol('6')">6</button>
+                <button class="btn btn-op" onclick="pushSymbol('-')">−</button>
+                <button class="btn btn-num" onclick="pushSymbol('1')">1</button>
+                <button class="btn btn-num" onclick="pushSymbol('2')">2</button>
+                <button class="btn btn-num" onclick="pushSymbol('3')">3</button>
+                <button class="btn btn-op" onclick="pushSymbol('+')">+</button>
+                <button class="btn btn-num" onclick="pushSymbol('0')">0</button>
+                <button class="btn btn-num" onclick="pushSymbol('.')">.</button>
+                <button class="btn btn-num" onclick="pushSymbol('EXP')">EXP</button>
+                <button class="btn btn-equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

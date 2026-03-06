@@ -5,10 +5,7 @@ const finalText = document.getElementById('final-text');
 const interimText = document.getElementById('interim-text');
 const status = document.getElementById('status');
 const visualizer = document.getElementById('visualizer');
-
-// Check for Web Speech API support
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
 if (!SpeechRecognition) {
     status.textContent = 'Browser not supported';
     startBtn.disabled = true;
@@ -19,10 +16,8 @@ if (!SpeechRecognition) {
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = 'en-US';
-
     let isRecording = false;
     let fullTranscript = '';
-
     recognition.onstart = () => {
         isRecording = true;
         startBtn.classList.add('recording');
@@ -32,7 +27,6 @@ if (!SpeechRecognition) {
             finalText.textContent = '';
         }
     };
-
     recognition.onresult = (event) => {
         let interimTranscript = '';
         for (let i = event.resultIndex; i < event.results.length; ++i) {
@@ -44,26 +38,20 @@ if (!SpeechRecognition) {
         }
         finalText.textContent = fullTranscript;
         interimText.textContent = interimTranscript;
-
-        // Auto-scroll to bottom
         finalText.parentElement.scrollTop = finalText.parentElement.scrollHeight;
     };
-
     recognition.onerror = (event) => {
         console.error('Speech recognition error:', event.error);
         status.textContent = `Error: ${event.error}`;
         stopRecording();
     };
-
     recognition.onend = () => {
         if (isRecording) {
-            // Restart if it stopped unexpectedly (e.g. silence)
             recognition.start();
         } else {
             status.textContent = 'Ready';
         }
     };
-
     const stopRecording = () => {
         isRecording = false;
         recognition.stop();
@@ -71,7 +59,6 @@ if (!SpeechRecognition) {
         visualizer.classList.remove('active');
         interimText.textContent = '';
     };
-
     startBtn.addEventListener('click', () => {
         if (isRecording) {
             stopRecording();
@@ -79,7 +66,6 @@ if (!SpeechRecognition) {
             recognition.start();
         }
     });
-
     copyBtn.addEventListener('click', () => {
         const textToCopy = finalText.textContent;
         if (textToCopy && textToCopy !== 'Tap the microphone to start transcribing...') {
@@ -92,7 +78,6 @@ if (!SpeechRecognition) {
             });
         }
     });
-
     clearBtn.addEventListener('click', () => {
         fullTranscript = '';
         finalText.textContent = 'Tap the microphone to start transcribing...';
