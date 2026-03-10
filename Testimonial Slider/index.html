@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Testimonial Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="slider-container">
+        <h1 class="slider-title">What Our Clients Say</h1>
+        <div class="testimonial-wrapper">
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"The attention to detail and professional approach exceeded my
+                        expectations. The team delivered a product that is not only functional but also visually
+                        stunning."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="Client 1" class="client-image">
+                        <div class="client-details">
+                            <h3 class="client-name">Sarah Johnson</h3>
+                            <p class="client-role">Product Manager, TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Working with this agency has been a game-changer for our business.
+                        Their innovative solutions helped us scale faster than we ever imagined possible."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="Client 2" class="client-image">
+                        <div class="client-details">
+                            <h3 class="client-name">Michael Chen</h3>
+                            <p class="client-role">Founder, GreenScale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Absolutely brilliant experience! From the initial consultation to the
+                        final delivery, everything was handled with utmost care and transparency."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Client 3" class="client-image">
+                        <div class="client-details">
+                            <h3 class="client-name">Emily Rodriguez</h3>
+                            <p class="client-role">Marketing Director, CreativePulse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn prev" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="pagination-dots" id="pagination-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
